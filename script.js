@@ -6,10 +6,10 @@ const second = document.getElementById('second');
 const third = document.getElementById('third');
 const start = document.getElementById('start');
 const stopp = document.getElementById('stop');
-const list = ["あ", "い", "う", "え", "お", "か", "き", "く", "け", "こ", "さ", "し", "す", "せ", "そ", "た", "ち", "つ", "て", "と", "な", "に", "ぬ", "ね", "の", "は", "ひ", "ふ", "へ", "ほ", "ま", "み", "む", "め", "も", "や", "ゆ", "よ", "わ", "を", "ん", "が", "ぎ", "ぐ", "げ", "ご", "ざ", "じ", "ず", "ぜ", "ぞ", "だ", "ぢ", "づ", "で", "ど", "ば", "び", "ぶ", "べ", "ぼ", "ぱ", "ぴ", "ぷ", "ぺ", "ぽ", "あ゛", "い゛", "う゛", "え゛", "お゛", "ぁ", "ぃ", "ぅ", "ぇ", "ぉ", "っ", "ゃ", "ゅ", "ょ"];
-
+const list = ["あ", "い", "う", "え", "お", "か", "き", "く", "け", "こ", "さ", "し", "す", "せ", "そ", "た", "ち", "つ", "て", "と", "な", "に", "ぬ", "ね", "の", "は", "ひ", "ふ", "へ", "ほ", "ま", "み", "む", "め", "も", "や", "ゆ", "よ", "わ", "を", "が", "ぎ", "ぐ", "げ", "ご", "ざ", "じ", "ず", "ぜ", "ぞ", "だ", "ぢ", "づ", "で", "ど", "ば", "び", "ぶ", "べ", "ぼ", "ぱ", "ぴ", "ぷ", "ぺ", "ぽ", "あ゛", "い゛", "う゛", "え゛", "お゛", "ん", "ぁ", "ぃ", "ぅ", "ぇ", "ぉ", "っ", "ゃ", "ゅ", "ょ"];
+console.log(list.length);
 function setRandomA() {
-  let rand1 = Math.floor(Math.random()*(list.length-9));
+  let rand1 = Math.floor(Math.random()*(list.length-10));
   first.textContent = list[rand1];
 }
 function setRandomB() {
@@ -20,6 +20,8 @@ function setRandomC() {
   let rand3 = Math.floor(Math.random()*list.length);
   third.textContent = list[rand3];
 }
+
+stopp.disabled = true;
 
 let timer1;
 let timer2;
@@ -34,9 +36,11 @@ start.addEventListener('click', () => {
   timer1 = window.setInterval(setRandomA, 50);
   timer2 = window.setInterval(setRandomB, 50);
   timer3 = window.setInterval(setRandomC, 50);
+  stopp.disabled = false;
 });
 
 stopp.addEventListener('click', () => {
+  stopp.disabled = true;
   stopp.classList.add('disabledbtn');
   window.clearInterval(timer1);
   first.classList.add('under');
