@@ -62,7 +62,7 @@ stopp.addEventListener('click', () => {
     const share_title = `私の今日の３文字は「${firstFigure}${secondFigure}${thirdFigure}」`
     share_twitter.setAttribute(
 	    "href",
-	    "https://twitter.com/share?url=" + "https://shijianzongyi-lang.github.io/wanwan/" + "&text=" + share_title + "&hashtags=今日の３文字"
+	    "https://twitter.com/share?url=" + "https://shijianzongyi-lang.github.io/gacha/" + "&text=" + share_title + "&hashtags=今日の３文字"
     );
     start.classList.remove('disabledbtn');
     start.disabled = false;
